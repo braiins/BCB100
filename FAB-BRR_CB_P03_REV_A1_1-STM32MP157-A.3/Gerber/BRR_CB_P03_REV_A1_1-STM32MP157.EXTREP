@@ -1,0 +1,39 @@
+------------------------------------------------------------------------------------------
+Gerber File Extension Report For: BRR_CB_P03_REV_A1_1-STM32MP157.GBR   25. 3. 2025  9:34:15
+------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------------
+Layer Extension     Layer Description                      
+------------------------------------------------------------------------------------------
+.gbr                Top Overlay                             
+.gbr                Top Paste                               
+.gbr                Top Solder                              
+.gbr                Top Layer                               
+.gbr                Int1 (GND)                              
+.gbr                Signal Layer 1                          
+.gbr                Signal Layer 2                          
+.gbr                Int2 (PWR)                              
+.gbr                Bottom Layer                            
+.gbr                Bottom Solder                           
+.gbr                Bottom Paste                            
+.gbr                Bottom Overlay                          
+.gbr                Mechanical 1                            
+.gbr                Top Tenting                             
+.gbr                Bottom Tenting                          
+.gbr                Mechanical 13                           
+.gbr                Mechanical 15                           
+.gbr                Top Component Center                    
+.gbr                Keep-Out Layer                          
+.gbr                Top Pad Master                          
+.gbr                Bottom Pad Master                       
+.gbr                Drill Guide                             
+.gbr                Drill Guide                             
+.gbr                Drill Guide                             
+.gbr                Drill Guide                             
+.gbr                Drill Guide                             
+.gbr                Drill Guide                             
+.gbr                Drill Guide                             
+.gbr                Drill Guide                             
+.gbr                Profile                                 
+------------------------------------------------------------------------------------------

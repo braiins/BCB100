@@ -1,0 +1,5 @@
+This file is intended to document modifications made to the design. 
+As per section 3.3.b of the CERN-OHL-S v2 license, any modifications to this design must be documented with a brief entry including the date and nature of the modification. 
+Entries should be added in chronological order, and no previous entries should be removed. 
+***
+- 26 April 2023: DCDC  to PMIC on RAM.

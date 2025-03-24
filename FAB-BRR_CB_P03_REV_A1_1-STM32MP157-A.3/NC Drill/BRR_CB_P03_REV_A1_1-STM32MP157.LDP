@@ -1,0 +1,8 @@
+Layer Pairs Export File for PCB: C:\Users\Richard Tomasovic\AppData\Local\Temp\Releases\Snapshot\1\BRR_CB_P03_REV_A1_1-STM32MP157.PcbDoc
+LayersSetName=Top_Bot_Thru_Holes|DrillFile=brr_cb_p03_rev_a1_1-stm32mp157.txt|DrillLayers=gtl,g1,g2,g3,g4,gbl
+LayersSetName=Top_Int1 (GND)_Blind_Vias|DrillFile=brr_cb_p03_rev_a1_1-stm32mp157.tx1|DrillLayers=gtl,g1
+LayersSetName=Top_Signal1_Blind_Vias|DrillFile=brr_cb_p03_rev_a1_1-stm32mp157.tx2|DrillLayers=gtl,g1,g2
+LayersSetName=Top_Signal2_Blind_Vias|DrillFile=brr_cb_p03_rev_a1_1-stm32mp157.tx3|DrillLayers=gtl,g1,g2,g3
+LayersSetName=Int1 (GND)_Int2 (PWR)_Buried_Vias|DrillFile=brr_cb_p03_rev_a1_1-stm32mp157.tx4|DrillLayers=g1,g2,g3,g4
+LayersSetName=Signal1_Bot_Blind_Vias|DrillFile=brr_cb_p03_rev_a1_1-stm32mp157.tx5|DrillLayers=g2,g3,g4,gbl
+LayersSetName=Signal2_Bot_Blind_Vias|DrillFile=brr_cb_p03_rev_a1_1-stm32mp157.tx6|DrillLayers=g3,g4,gbl

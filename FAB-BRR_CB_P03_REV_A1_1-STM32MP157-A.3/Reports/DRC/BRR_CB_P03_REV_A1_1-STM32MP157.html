@@ -1,0 +1,519 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+        h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+            padding: 0.3em;
+        }
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+        body {
+			font-family : segoe ui;
+        }
+
+        td, th {
+            padding: 0.5em;
+			text-align : left;
+			width: 10em;
+        }
+        th {
+			background-color : #EEEEEE;
+
+        }
+        th.column1, td.column1 {
+            text-align: left;
+            width : auto;
+        }
+        table {
+            width : 100%;
+			font-size: 0.9em;
+        }
+        
+        .DRC_summary_header {                           
+            padding-bottom : 0.1em;
+            border : 0px solid black;                           
+            width: 100%;
+			align: left;
+        }
+
+        .DRC_summary_header_col1, 
+        .DRC_summary_header_col2, 
+        .DRC_summary_header_col3  {
+            color : black;
+            font-size:100%;
+                        padding : 0em;
+            padding-top : 0.2em;
+            padding-bottom 0.2em;
+            border : 0px solid black;
+            vertical-align: top;
+			text-align: left;
+        }
+        
+        .DRC_summary_header_col1 {                              
+			font-weight: bold;
+			width: 8em;
+        }
+
+        .DRC_summary_header_col2 {       
+			width: 0.1em;
+		
+        }
+
+        .DRC_summary_header_col3 {       
+			width : auto;
+        }
+
+        .header_holder  {
+        Width = 100%;
+        border = 0px solid green;
+        padding = 0;
+        }
+        
+        
+        .front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+                {
+            left:0;
+            top:0;
+			padding: 0em;
+            padding-top : 0.1em;            
+            border : 0px solid black;
+            width : 100%;
+            vertical-align: top;
+            text-align: left;
+        }
+
+        .front_matter_column1 {
+            width : 8em;   
+			font-weight: bold;
+        }
+        
+        .front_matter_column2 {
+            width: 0.1em;
+        }
+
+        .front_matter_column3 {
+            width         : auto;  
+        }
+        
+        .total_column1, .total_column {
+            font-weight : bold;
+        }
+        .total_column1 {
+			text-align : left;
+        }
+        .warning, .error {
+            color : red;
+            font-weight : bold;
+        }
+        tr.onmouseout_odd {
+			background-color : #white;
+        }
+        tr.onmouseout_even { 
+			background-color : #FAFAFA;
+        }
+        tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+        } 
+        a:link, a:visited, .q a:link,.q a:active,.q {
+            color: #21489e; 
+        }
+        a:link.callback, a:visited.callback { 
+            color: #21489e; 
+        }
+        p.contents_level1 {
+            font-weight : bold;
+            font-size : 110%;
+            margin : 0.5em;
+        }
+        p.contents_level2 {
+            position : relative;
+            left : 20px;
+            margin : 0.5em;
+        }
+    </style><script type="text/javascript">
+        function coordToMils(coord) {
+            var number = coord / 10000;
+            
+            if (number != number.toFixed(3))
+                number = number.toFixed(3);
+
+            return number + 'mil'
+        }
+
+        function coordToMM(coord) {
+            var number = 0.0254 * coord / 10000;
+            
+            if (number != number.toFixed(4))
+                number = number.toFixed(4);
+            
+            return number + 'mm'
+        }
+    
+        function convertCoord(coordNode, units) {
+            for (var i = 0; i < coordNode.childNodes.length; i++) {
+                coordNode.removeChild(coordNode.childNodes[i]);
+            }
+
+            var coord = coordNode.getAttribute('value');
+            if (coord != null) {
+                if (units == 'mm') {
+                    textNode = document.createTextNode(coordToMM(coord));
+                    coordNode.appendChild(textNode);
+                } else if (units == 'mil') {
+                    textNode = document.createTextNode(coordToMils(coord));     
+                    coordNode.appendChild(textNode);    
+                }
+            }
+        }
+    
+        function convertUnits(unitNode, units) {
+            for (var i = 0; i < unitNode.childNodes.length; i++) {
+                unitNode.removeChild(unitNode.childNodes[i]);       
+            }
+        
+            textNode = document.createTextNode(units); 
+            unitNode.appendChild(textNode);
+        }
+    
+        function changeUnits(radio_input, units) {
+            if (radio_input.checked) {
+            
+                var elements = document.getElementsByName('coordinate');
+                if (elements) {
+                    for (var i = 0; i < elements.length; i++) {
+                        convertCoord(elements[i], units);
+                    }
+                }
+    
+                var elements = document.getElementsByName('units');
+                if (elements) {
+                    for (var i = 0; i < elements.length; i++) {
+                        convertUnits(elements[i], units);
+                    }
+                }
+            }
+        }
+    </script></head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD24\Templates\AD_logo.png
+        "><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">25. 3. 2025</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">9:34:08</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:02</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\Richard Tomasovic\AppData\Local\Temp\Releases\Snapshot\1\BRR_CB_P03_REV_A1_1-STM32MP157.PcbDoc" class="file"><acronym title="C:\Users\Richard Tomasovic\AppData\Local\Temp\Releases\Snapshot\1\BRR_CB_P03_REV_A1_1-STM32MP157.PcbDoc">C:\Users\Richard Tomasovic\AppData\Local\Temp\Releases\Snapshot\1\BRR_CB_P03_REV_A1_1-STM32MP157.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Waived Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">16</td></tr>
+</table>
+</td>
+</table><a name="IDIAXTS2OFPXQJIBHIPQBLV40QMN52D5LCBR3E33E11LPURLUCUJO"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDXK1ZSY5AGU3IG2THFRV44VJUVJQHQLMN330X25G4DM1ZR4AKCWIL">Clearance Constraint (Gap=0.151mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDEQ3TTKSVY0BDFDVS3J44DF2E2P3BWGLONWAJNZLSEH4COLIQBX0M">Clearance Constraint (Gap=0.102mm) (WithinRoom('MPU_BGA')),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDDXC0YN0NHMB1GJ41JCLCXZD5JDURPBCAGSNO4MPCRJJDLNX5PYSF">Clearance Constraint (Gap=0.102mm) (WithinRoom('RAM')),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID0SNHRKUQLH3KKOJ3IPRHHWF1ZK3ED1OMOM1L4UGZYIBG3CJVAWEM">Clearance Constraint (Gap=0.102mm) (WithinRoom('EMMC')),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDVPGSOCGWDYJVN2EU1P3DLRWL5PUFP43ZAZBSCZF0HYJIOKUDL1HI">Clearance Constraint (Gap=0.102mm) (InNetClass('SINGLE_55R_DDR')),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID00JAPYBMS5MEFIK2EJMYHOSQPOFC2BMO2QR32II3M1GDGXDWXJ0F">Clearance Constraint (Gap=0.506mm) (InNet('NetC1_1') and InPolygon),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDCBUOULVIKMAFFWFEZAUN30ZFTBPREZLAEZL0QPG43BFIQ0TDYZFO">Clearance Constraint (Gap=0.506mm) (OnLayer('Int1 (GND)')),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDRKUXLJE34KEVFW2FJRZNHEKDLFGMR2R1THD1PKNS3W1RCYXSVTYB">Clearance Constraint (Gap=0.5mm) (HasFootprint('FID_1MM')),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID45HZ4NRS12Y4E2DU2VFGTNSZ3O5ONO5J0B1ZS1E04ALYHTMFC2BC">Clearance Constraint (Gap=0.102mm) ((InDifferentialPairClass('All Differential Pairs'))),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID2N5OOAE5PD0HCUXC5Z3LAMDJEJOGINCNSZ30IFENCDRJTHWLD5GM">Clearance Constraint (Gap=0.254mm) (InPolygon),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDFDIMAYQZEQKOP00OJQGB41BPNFYNOFZJ00IKQKHYYHBDX54KRFRN">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDAFOVJQ5E0FENCQOCTQDUO31UYHJ5FXE5MC1GAZ5S2D4NXCZRE1B">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDCU1R3XGYW5ETD0QBEHTIZX3GWLF5UYRCCSSQU0HPXKSZ53L0PUWM">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDDO5R2HQJAABDC1XK5E0YFXCO2FNLU2KQPG2Z20EVC1IWQTPCHLCG">Width Constraint (Min=0.044mm) (Max=0.145mm) (Preferred=0.089mm) (InNetClass('50R_SDMMC1'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID1X4ATY3OKNCOH0LOPPG5IBJVXOSPIGQI1RXX3GOHFVEVPOQM5RQC">Width Constraint (Min=0.031mm) (Max=0.12mm) (Preferred=0.077mm) (InNetClass('SINGLE_55R_DDR'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDZ0DQQ0DE5KG0EQHRI215SXZUKNI0YPEG5DIYJMGRHJY1PKFZMSAP">Width Constraint (Min=0.102mm) (Max=0.305mm) (Preferred=0.203mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDAJZCZVL4IYDHFCOC0L2UB5EUPPYHKA3FJNNKI5PXPBL1YO4QCXRO">Width Constraint (Min=0.17mm) (Max=0.5mm) (Preferred=0.254mm) (InNet('DDR_VREF'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDZO4TJHDUQI0NNG51RXBEALROJJ035BF4D4NL5OFX4IM32VGF44TD">Width Constraint (Min=0.102mm) (Max=0.305mm) (Preferred=0.16mm) (WithinRoom('RAM'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDD01AAYHHTMXYNF5BZZC5GQPZUNTHZ1PVRWAOHAC5XZYSW0OTAUGL">Width Constraint (Min=0.044mm) (Max=0.145mm) (Preferred=0.089mm) (InNetClass('50R_SDMMC2'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDVDPZNNANUQCFFWXRYHYLKNOITLCSPJEV2SDUTEQPBKKXTQYBS4H">Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID2KIOOZSL3V0CLLXMF3CC55N3QONLEEY1FAZJK3HYD0G4EV1L0TIG">Hole Size Constraint (Min=0.2mm) (Max=6mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID4M4UG22KZJYQNA5QP4TTVE2OXL33O2JWNIFOYYNSE2MXZZXMQNJI">Hole To Hole Clearance (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDZQVN5UJPJCCLB44R0D3NV1YEJC01BLHIGZSGW1BEC2MAWK4C4L3G">Minimum Solder Mask Sliver (Gap=0mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDYC1ZEAOSCU5WOISUPDMXZQ5FHONXEHW2PKACXVGPHQK1LRGLTLHO">Silk To Solder Mask (Clearance=0mm) (IsPad),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDCXHWJU5ZQAMAMZIQIO30FO0MNGAZZ42OAMF323EVMRGWE0EB3CW">Silk to Silk (Clearance=0mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDME3RXRQE3TKHEB2XZ40XB1H2MGUBO10K3F4KHZJDR04SMVRAT3GG">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDXAZYU5C4VLGFIUDQBBNRCHTD2JJL4GFTNOA0S5M0O1K2B322LJLL">Board Clearance Constraint (Gap=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID1PFBNNMIAISHPOMHBEUJUEGNRPHNKB1LLD41NIPSECWDEGQKVJTD">Length Constraint (Min=0mm) (Max=100mm) (InNetClass('50R_SDMMC1'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDIBJ3Y0CX30SSDXPJRASQZMG0RDNQH4BMBRCBOSDMHC4UHFLJRR2P">Matched Lengths(Tolerance=2mm) (InNetClass('50R_SDMMC1'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDYIGF3R0UYAQXFREAEKACMALEXNFUV0J4DOTPN3OQHZMC3GQ4MJBJ">Matched Lengths(Delay Tolerance=5ps) (InDifferentialPairClass('DIFF_100R_DDR'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDUASSPVGYTCZIG1LN2RIRUQ02HBQRPGZ4JRV4XBNHBASANUWTXWDE">Matched Lengths(Delay Tolerance=10ps) (InDifferentialPairClass('ETH_100R'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID2CH325GUMJ0JBMSHLF2G3VKMODC4BAVG4OQF0PETDZYTJJZCWJBP">Matched Lengths(Tolerance=3mm) (InxSignalClass('DDR3'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDR1HZEEJIDMCOMDQB32RWSBSLRDDNN4XRGAYUKFPHOEQ1RIELLOWC">Matched Lengths(Tolerance=1mm) (InxSignalClass('SDMMC2'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDXKMZL5YGQUGIPLWZCCEQHAC04B33WY4KUQCJRJHGI5TUBCPQ3VQB">Matched Lengths(Delay Tolerance=10ps) (InDifferentialPairClass('DIFF_100R_DDR'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDT2ZWJGM4LV3OGPYRMO2USW2Q3HHMHKQKLIU15UI13KH3BPVWWPGH">Matched Lengths(Delay Tolerance=5ps) (InDifferentialPairClass('ETH_100R'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID253KMOQWEWJHKEM2OBXFBM011K1HCFLOKEKLM5WXZVIRCZ1GB3H">Maximum Via Count Constraint (Limit=2) (InNetClass('SINGLE_55R_DDR'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDJO1QR0APYZ1JCJQI2TZIMZN1FF5LKK0VF02TKLEXXZSGW2PBT5ZD">Room U_HBInterface_1 (Bounding Region = (8.255mm, 28.068mm, 24.255mm, 50.068mm) (InComponentClass('U_HBInterface_1'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDO51GFGMAI3IHHJVUU0DPWIHGMPVDD2WT0XIHPMHLYUCIOVX4QO4C">Room EMMC (Bounding Region = (43.855mm, 20.668mm, 62.655mm, 42.664mm) (InComponentClass('Room Definition1'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDLLOABTCNOTB1KYPRCNDB3S15NKCFOA5A3XMOUZD2XL0QLDF4MRGB">Room U_HBInterface_0 (Bounding Region = (8.255mm, 6.068mm, 24.255mm, 28.068mm) (InComponentClass('U_HBInterface_0'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDOCVZPDZ5WFFDCJORUWRPSRGINOPNESHEKPNYP5JMLCJENRN0DOJL">Room U_HBInterface_2 (Bounding Region = (8.255mm, 50.068mm, 24.255mm, 72.068mm) (InComponentClass('U_HBInterface_2'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID4MYA2104JREEPVTXDAQJQWDUHI3IH5BXM5DEIFLZLYXWZXDP553J">Room RAM (Bounding Region = (57.355mm, 68.668mm, 71.255mm, 86.168mm) (False)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDG54RSHYVXXZUHB1CEGI1BSNP0JYUBTZW1202RUIILGALKWEPU0KF">Room MPU_BGA (Bounding Region = (54.455mm, 46.968mm, 73.855mm, 65.168mm) (False)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDKELT5V24RVPTECSVUHSX2YSG5JR1TR5DU2WWNQB4JRH5WKYSQQ0M">Room U_HBInterface_3 (Bounding Region = (24.255mm, 6.068mm, 40.255mm, 28.068mm) (InComponentClass('U_HBInterface_3'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDPPNIV4YD320AI00IK2KKFIXCZPM0LKMRDZN3ZYFTBG1VJRU4FHNP">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Waived Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDFYGWFHAP4AQ2I4FIA30VBMPTXCJ0E25M0XAA1XKVLIMZKQQSAPQ">Board Clearance Constraint (Gap=0mm) (All)</a></td>
+<td class="column2">15</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDWUO0QPPOWUMZIYIYXXV3YYXW4EFZX0CLPLFJ2LBWQPTA5AJJAACP">Maximum Via Count Constraint (Limit=2) (InNetClass('SINGLE_55R_DDR'))</a></td>
+<td class="column2">1</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">16</td>
+</tr>
+</table><br><a name="IDZ45SOFP23DMYBSWXOJJZMPYJCNSTLAAQMZJU3DNISUUFQF01250O"><h2>Rule Violations</h2></a><a name="ID1RHDHJAIH0YGHXTU0RCQF3UENLXBZQYGJLQFMJMAECRZ3VY1JDPD"><h2>Waived Violations</h2></a><a name="IDFYGWFHAP4AQ2I4FIA30VBMPTXCJ0E25M0XAA1XKVLIMZKQQSAPQ"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="waived">Board Clearance Constraint (Gap=0mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Richard Tomasovic\AppData\Local\Temp\Releases\Snapshot\1\BRR_CB_P03_REV_A1_1-STM32MP157.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=319.324mil|Location2.X=330.324mil|Location1.Y=4123.174mil|Location2.Y=4134.174mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Richard Tomasovic\AppData\Local\Temp\Releases\Snapshot\1\BRR_CB_P03_REV_A1_1-STM32MP157.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=319.324mil|Location2.X=330.324mil|Location1.Y=4123.174mil|Location2.Y=4134.174mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.381mm) Between Board Edge And Track (0.1mm,104.1mm)(21.4mm,104.1mm) on Top Overlay </acronym></a><br>Waived by Richard Tomašoviè at 14. 5. 2023 16:14:11</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Richard Tomasovic\AppData\Local\Temp\Releases\Snapshot\1\BRR_CB_P03_REV_A1_1-STM32MP157.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=319.324mil|Location2.X=330.324mil|Location1.Y=3835.773mil|Location2.Y=3846.773mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Richard Tomasovic\AppData\Local\Temp\Releases\Snapshot\1\BRR_CB_P03_REV_A1_1-STM32MP157.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=319.324mil|Location2.X=330.324mil|Location1.Y=3835.773mil|Location2.Y=3846.773mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.381mm) Between Board Edge And Track (0.1mm,89.5mm)(0.1mm,104.1mm) on Top Overlay </acronym></a><br>Waived by Richard Tomašoviè at 14. 5. 2023 16:14:14</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Richard Tomasovic\AppData\Local\Temp\Releases\Snapshot\1\BRR_CB_P03_REV_A1_1-STM32MP157.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=319.324mil|Location2.X=330.324mil|Location1.Y=3548.371mil|Location2.Y=3559.371mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Richard Tomasovic\AppData\Local\Temp\Releases\Snapshot\1\BRR_CB_P03_REV_A1_1-STM32MP157.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=319.324mil|Location2.X=330.324mil|Location1.Y=3548.371mil|Location2.Y=3559.371mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.381mm) Between Board Edge And Track (0.1mm,89.5mm)(21.4mm,89.5mm) on Top Overlay </acronym></a><br>Waived by Richard Tomašoviè at 14. 5. 2023 16:14:18</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Richard Tomasovic\AppData\Local\Temp\Releases\Snapshot\1\BRR_CB_P03_REV_A1_1-STM32MP157.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4333.265mil|Location2.X=4344.265mil|Location1.Y=2228.489mil|Location2.Y=2239.489mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Richard Tomasovic\AppData\Local\Temp\Releases\Snapshot\1\BRR_CB_P03_REV_A1_1-STM32MP157.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4333.265mil|Location2.X=4344.265mil|Location1.Y=2228.489mil|Location2.Y=2239.489mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.381mm) Between Board Edge And Track (101.95mm,47.925mm)(101.95mm,64.025mm) on Top Overlay </acronym></a><br>Waived by Richard Tomašoviè at 14. 5. 2023 16:14:07</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Richard Tomasovic\AppData\Local\Temp\Releases\Snapshot\1\BRR_CB_P03_REV_A1_1-STM32MP157.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4296.233mil|Location2.X=4307.233mil|Location1.Y=1911.56mil|Location2.Y=1922.56mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Richard Tomasovic\AppData\Local\Temp\Releases\Snapshot\1\BRR_CB_P03_REV_A1_1-STM32MP157.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4296.233mil|Location2.X=4307.233mil|Location1.Y=1911.56mil|Location2.Y=1922.56mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.381mm) Between Board Edge And Track (89.78mm,47.925mm)(101.95mm,47.925mm) on Top Overlay </acronym></a><br>Waived by Richard Tomašoviè at 14. 5. 2023 16:14:03</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Richard Tomasovic\AppData\Local\Temp\Releases\Snapshot\1\BRR_CB_P03_REV_A1_1-STM32MP157.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4296.233mil|Location2.X=4307.233mil|Location1.Y=2545.418mil|Location2.Y=2556.418mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Richard Tomasovic\AppData\Local\Temp\Releases\Snapshot\1\BRR_CB_P03_REV_A1_1-STM32MP157.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4296.233mil|Location2.X=4307.233mil|Location1.Y=2545.418mil|Location2.Y=2556.418mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.381mm) Between Board Edge And Track (89.78mm,64.025mm)(101.95mm,64.025mm) on Top Overlay </acronym></a><br>Waived by Richard Tomašoviè at 14. 5. 2023 16:14:05</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Richard Tomasovic\AppData\Local\Temp\Releases\Snapshot\1\BRR_CB_P03_REV_A1_1-STM32MP157.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4252.432mil|Location2.X=4268.682mil|Location1.Y=813.463mil|Location2.Y=829.713mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Richard Tomasovic\AppData\Local\Temp\Releases\Snapshot\1\BRR_CB_P03_REV_A1_1-STM32MP157.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4252.432mil|Location2.X=4268.682mil|Location1.Y=813.463mil|Location2.Y=829.713mil|Absolute=True">Board Outline Clearance(Outline Edge): (0.073mm &lt; 0.381mm) Between Board Edge And Track (97.05mm,20.1mm)(99.8mm,20.1mm) on Top Overlay </acronym></a><br>Waived by Richard Tomašoviè at 14. 5. 2023 16:13:58</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Richard Tomasovic\AppData\Local\Temp\Releases\Snapshot\1\BRR_CB_P03_REV_A1_1-STM32MP157.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4252.432mil|Location2.X=4268.682mil|Location1.Y=813.463mil|Location2.Y=829.713mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Richard Tomasovic\AppData\Local\Temp\Releases\Snapshot\1\BRR_CB_P03_REV_A1_1-STM32MP157.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4252.432mil|Location2.X=4268.682mil|Location1.Y=813.463mil|Location2.Y=829.713mil|Absolute=True">Board Outline Clearance(Outline Edge): (0.073mm &lt; 0.381mm) Between Board Edge And Track (97.05mm,20.1mm)(99.8mm,20.1mm) on Top Overlay </acronym></a><br>Waived by Richard Tomašoviè at 14. 5. 2023 16:14:01</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Richard Tomasovic\AppData\Local\Temp\Releases\Snapshot\1\BRR_CB_P03_REV_A1_1-STM32MP157.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4252.432mil|Location2.X=4268.682mil|Location1.Y=1392.203mil|Location2.Y=1408.453mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Richard Tomasovic\AppData\Local\Temp\Releases\Snapshot\1\BRR_CB_P03_REV_A1_1-STM32MP157.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4252.432mil|Location2.X=4268.682mil|Location1.Y=1392.203mil|Location2.Y=1408.453mil|Absolute=True">Board Outline Clearance(Outline Edge): (0.073mm &lt; 0.381mm) Between Board Edge And Track (97.05mm,34.8mm)(99.8mm,34.8mm) on Top Overlay </acronym></a><br>Waived by Richard Tomašoviè at 14. 5. 2023 16:14:21</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Richard Tomasovic\AppData\Local\Temp\Releases\Snapshot\1\BRR_CB_P03_REV_A1_1-STM32MP157.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4252.432mil|Location2.X=4268.682mil|Location1.Y=1392.203mil|Location2.Y=1408.453mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Richard Tomasovic\AppData\Local\Temp\Releases\Snapshot\1\BRR_CB_P03_REV_A1_1-STM32MP157.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4252.432mil|Location2.X=4268.682mil|Location1.Y=1392.203mil|Location2.Y=1408.453mil|Absolute=True">Board Outline Clearance(Outline Edge): (0.073mm &lt; 0.381mm) Between Board Edge And Track (97.05mm,34.8mm)(99.8mm,34.8mm) on Top Overlay </acronym></a><br>Waived by Richard Tomašoviè at 14. 5. 2023 16:13:56</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Richard Tomasovic\AppData\Local\Temp\Releases\Snapshot\1\BRR_CB_P03_REV_A1_1-STM32MP157.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4256.863mil|Location2.X=4267.863mil|Location1.Y=3038.529mil|Location2.Y=3049.529mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Richard Tomasovic\AppData\Local\Temp\Releases\Snapshot\1\BRR_CB_P03_REV_A1_1-STM32MP157.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4256.863mil|Location2.X=4267.863mil|Location1.Y=3038.529mil|Location2.Y=3049.529mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.381mm) Between Board Edge And Track (98.6mm,76.55mm)(99.95mm,76.55mm) on Top Overlay </acronym></a><br>Waived by Richard Tomašoviè at 18. 5. 2023 11:03:25</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Richard Tomasovic\AppData\Local\Temp\Releases\Snapshot\1\BRR_CB_P03_REV_A1_1-STM32MP157.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4256.863mil|Location2.X=4267.863mil|Location1.Y=3168.45mil|Location2.Y=3179.45mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Richard Tomasovic\AppData\Local\Temp\Releases\Snapshot\1\BRR_CB_P03_REV_A1_1-STM32MP157.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4256.863mil|Location2.X=4267.863mil|Location1.Y=3168.45mil|Location2.Y=3179.45mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.381mm) Between Board Edge And Track (98.6mm,79.85mm)(99.95mm,79.85mm) on Top Overlay </acronym></a><br>Waived by Richard Tomašoviè at 18. 5. 2023 11:03:28</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Richard Tomasovic\AppData\Local\Temp\Releases\Snapshot\1\BRR_CB_P03_REV_A1_1-STM32MP157.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4252.432mil|Location2.X=4268.682mil|Location1.Y=813.463mil|Location2.Y=829.713mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Richard Tomasovic\AppData\Local\Temp\Releases\Snapshot\1\BRR_CB_P03_REV_A1_1-STM32MP157.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4252.432mil|Location2.X=4268.682mil|Location1.Y=813.463mil|Location2.Y=829.713mil|Absolute=True">Board Outline Clearance(Outline Edge): (0.073mm &lt; 0.381mm) Between Board Edge And Track (99.8mm,20.1mm)(99.8mm,34.8mm) on Top Overlay </acronym></a><br>Waived by Richard Tomašoviè at 14. 5. 2023 16:14:27</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Richard Tomasovic\AppData\Local\Temp\Releases\Snapshot\1\BRR_CB_P03_REV_A1_1-STM32MP157.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4252.432mil|Location2.X=4268.682mil|Location1.Y=813.463mil|Location2.Y=829.713mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Richard Tomasovic\AppData\Local\Temp\Releases\Snapshot\1\BRR_CB_P03_REV_A1_1-STM32MP157.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4252.432mil|Location2.X=4268.682mil|Location1.Y=813.463mil|Location2.Y=829.713mil|Absolute=True">Board Outline Clearance(Outline Edge): (0.073mm &lt; 0.381mm) Between Board Edge And Track (99.8mm,20.1mm)(99.8mm,34.8mm) on Top Overlay </acronym></a><br>Waived by Richard Tomašoviè at 14. 5. 2023 16:14:23</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Richard Tomasovic\AppData\Local\Temp\Releases\Snapshot\1\BRR_CB_P03_REV_A1_1-STM32MP157.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4256.863mil|Location2.X=4267.863mil|Location1.Y=3103.489mil|Location2.Y=3114.489mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Richard Tomasovic\AppData\Local\Temp\Releases\Snapshot\1\BRR_CB_P03_REV_A1_1-STM32MP157.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4256.863mil|Location2.X=4267.863mil|Location1.Y=3103.489mil|Location2.Y=3114.489mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.381mm) Between Board Edge And Track (99.95mm,76.55mm)(99.95mm,79.85mm) on Top Overlay </acronym></a><br>Waived by Richard Tomašoviè at 18. 5. 2023 11:03:32</td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDWUO0QPPOWUMZIYIYXXV3YYXW4EFZX0CLPLFJ2LBWQPTA5AJJAACP"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="waived">Maximum Via Count Constraint (Limit=2) (InNetClass('SINGLE_55R_DDR'))</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Richard Tomasovic\AppData\Local\Temp\Releases\Snapshot\1\BRR_CB_P03_REV_A1_1-STM32MP157.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2249.139mil|Location2.X=2514.982mil|Location1.Y=2456.32mil|Location2.Y=3345.273mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Richard Tomasovic\AppData\Local\Temp\Releases\Snapshot\1\BRR_CB_P03_REV_A1_1-STM32MP157.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2249.139mil|Location2.X=2514.982mil|Location1.Y=2456.32mil|Location2.Y=3345.273mil|Absolute=True">Maximum Via Count Constraint: Net DDR3_CSN (Via Count=3)</acronym></a><br>Waived by Richard Tomašoviè at 26. 5. 2023 16:26:37</td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

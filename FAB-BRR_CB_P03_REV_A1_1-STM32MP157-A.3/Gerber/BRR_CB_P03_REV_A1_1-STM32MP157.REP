@@ -1,0 +1,682 @@
+*************************************************************
+FileName = BRR_CB_P03_REV_A1_1-STM32MP157.GBR
+AutoAperture = True
+*************************************************************
+Generating : Bottom Overlay
+      File : BRR_CB_P03_REV_A1_1-STM32MP157_Legend_Bot.gbr
+
+    Adding Layer      : Bottom Overlay
+
+
+Used DCodes :
+    D11
+    D12
+    D14
+    D18
+*************************************************************
+
+*************************************************************
+Generating : Keep-Out Layer
+      File : BRR_CB_P03_REV_A1_1-STM32MP157_Keep-out.gbr
+
+    Adding Layer      : Keep-Out Layer
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Bottom Paste
+      File : BRR_CB_P03_REV_A1_1-STM32MP157_Paste_Bot.gbr
+
+    Adding Layer      : Bottom Paste
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D22
+    D24
+    D28
+    D30
+    D31
+    D111
+    D122
+    D123
+    D124
+    D125
+*************************************************************
+
+*************************************************************
+Generating : Top Layer
+      File : BRR_CB_P03_REV_A1_1-STM32MP157_Copper_Signal_Top.gbr
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D13
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+    D38
+    D39
+    D40
+    D41
+    D42
+    D43
+    D44
+    D45
+    D46
+    D47
+    D48
+    D49
+    D92
+    D93
+    D94
+    D95
+    D96
+    D97
+    D98
+    D99
+    D100
+    D101
+    D102
+    D103
+    D104
+    D105
+    D106
+    D107
+    D108
+    D109
+    D110
+    D111
+    D112
+    D113
+    D114
+    D115
+    D116
+    D117
+    D118
+*************************************************************
+
+*************************************************************
+Generating : Int1 (GND)
+      File : BRR_CB_P03_REV_A1_1-STM32MP157_Copper_Signal_1.gbr
+
+    Adding Layer      : Int1 (GND)
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D104
+    D107
+    D110
+    D111
+    D112
+    D115
+    D117
+*************************************************************
+
+*************************************************************
+Generating : Bottom Tenting
+      File : BRR_CB_P03_REV_A1_1-STM32MP157_Bottom_Tenting.gbr
+
+    Adding Layer      : Bottom Tenting
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 1
+      File : BRR_CB_P03_REV_A1_1-STM32MP157_Mechanical_1.gbr
+
+    Adding Layer      : Mechanical 1
+
+
+Used DCodes :
+    D10
+*************************************************************
+
+*************************************************************
+Generating : Top Component Center
+      File : BRR_CB_P03_REV_A1_1-STM32MP157_Top_Component_Center.gbr
+
+    Adding Layer      : Top Component Center
+
+
+Used DCodes :
+    D16
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 15
+      File : BRR_CB_P03_REV_A1_1-STM32MP157_Mechanical_15.gbr
+
+    Adding Layer      : Mechanical 15
+
+
+Used DCodes :
+    D16
+    D130
+*************************************************************
+
+*************************************************************
+Generating : Bottom Solder
+      File : BRR_CB_P03_REV_A1_1-STM32MP157_Soldermask_Bot.gbr
+
+    Adding Layer      : Bottom Solder
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D52
+    D53
+    D57
+    D58
+    D60
+    D61
+    D79
+    D80
+    D81
+    D82
+    D83
+    D84
+    D85
+    D86
+    D87
+    D88
+    D89
+    D90
+    D91
+    D124
+    D126
+    D127
+    D128
+*************************************************************
+
+*************************************************************
+Generating : Int2 (PWR)
+      File : BRR_CB_P03_REV_A1_1-STM32MP157_Copper_Signal_4.gbr
+
+    Adding Layer      : Int2 (PWR)
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D97
+    D101
+    D104
+    D112
+    D115
+    D117
+    D118
+*************************************************************
+
+*************************************************************
+Generating : Signal Layer 2
+      File : BRR_CB_P03_REV_A1_1-STM32MP157_Copper_Signal_3.gbr
+
+    Adding Layer      : Signal Layer 2
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D96
+    D97
+    D104
+    D107
+    D110
+    D111
+    D112
+    D115
+    D117
+    D118
+    D119
+    D120
+*************************************************************
+
+*************************************************************
+Generating : Bottom Pad Master
+      File : BRR_CB_P03_REV_A1_1-STM32MP157_Pads_Bot.gbr
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D22
+    D24
+    D28
+    D30
+    D31
+    D94
+    D104
+    D105
+    D106
+    D107
+    D108
+    D109
+    D110
+    D111
+    D112
+    D113
+    D114
+    D115
+    D116
+    D122
+    D123
+    D124
+    D125
+*************************************************************
+
+*************************************************************
+Generating : Top Tenting
+      File : BRR_CB_P03_REV_A1_1-STM32MP157_Top_Tenting.gbr
+
+    Adding Layer      : Top Tenting
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 13
+      File : BRR_CB_P03_REV_A1_1-STM32MP157_Mechanical_13.gbr
+
+    Adding Layer      : Mechanical 13
+
+
+Used DCodes :
+    D12
+    D13
+    D16
+    D129
+*************************************************************
+
+*************************************************************
+Generating : Top Solder
+      File : BRR_CB_P03_REV_A1_1-STM32MP157_Soldermask_Top.gbr
+
+    Adding Layer      : Top Solder
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D23
+    D38
+    D50
+    D51
+    D52
+    D53
+    D54
+    D55
+    D56
+    D57
+    D58
+    D59
+    D60
+    D61
+    D62
+    D63
+    D64
+    D65
+    D66
+    D67
+    D68
+    D69
+    D70
+    D71
+    D72
+    D73
+    D74
+    D75
+    D76
+    D77
+    D78
+    D79
+    D80
+    D81
+    D82
+    D83
+    D84
+    D85
+    D86
+    D87
+    D88
+    D89
+    D90
+    D91
+*************************************************************
+
+*************************************************************
+Generating : Top Paste
+      File : BRR_CB_P03_REV_A1_1-STM32MP157_Paste_Top.gbr
+
+    Adding Layer      : Top Paste
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+    D38
+    D39
+    D40
+    D41
+    D42
+    D43
+    D44
+    D45
+    D46
+    D47
+    D48
+    D49
+*************************************************************
+
+*************************************************************
+Generating : Signal Layer 1
+      File : BRR_CB_P03_REV_A1_1-STM32MP157_Copper_Signal_2.gbr
+
+    Adding Layer      : Signal Layer 1
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D13
+    D96
+    D97
+    D104
+    D107
+    D109
+    D110
+    D111
+    D112
+    D115
+    D117
+    D118
+    D119
+    D120
+*************************************************************
+
+*************************************************************
+Generating : Top Overlay
+      File : BRR_CB_P03_REV_A1_1-STM32MP157_Legend_Top.gbr
+
+    Adding Layer      : Top Overlay
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
+    D15
+    D16
+    D17
+    D18
+    D19
+*************************************************************
+
+*************************************************************
+Generating : Top Pad Master
+      File : BRR_CB_P03_REV_A1_1-STM32MP157_Pads_Top.gbr
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+    D38
+    D39
+    D40
+    D41
+    D42
+    D43
+    D44
+    D45
+    D46
+    D47
+    D48
+    D49
+    D94
+    D104
+    D105
+    D106
+    D107
+    D108
+    D109
+    D110
+    D111
+    D112
+    D113
+    D114
+    D115
+    D116
+*************************************************************
+
+*************************************************************
+Generating : Bottom Layer
+      File : BRR_CB_P03_REV_A1_1-STM32MP157_Copper_Signal_Bot.gbr
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D22
+    D24
+    D28
+    D30
+    D31
+    D94
+    D95
+    D96
+    D97
+    D98
+    D99
+    D104
+    D105
+    D106
+    D107
+    D108
+    D109
+    D110
+    D111
+    D112
+    D113
+    D114
+    D115
+    D116
+    D117
+    D118
+    D121
+    D122
+    D123
+    D124
+    D125
+*************************************************************
+
+*************************************************************
+Generating : Drill Guide
+      File : BRR_CB_P03_REV_A1_1-STM32MP157_Drillmap_1.gbr
+
+    Adding Drill Pair : Top Layer-Bottom Layer
+
+    Adding Layer      : Drill Guide
+
+
+Used DCodes :
+    D13
+*************************************************************
+
+*************************************************************
+Generating : Drill Guide
+      File : BRR_CB_P03_REV_A1_1-STM32MP157_Drillmap_2.gbr
+
+    Adding Drill Pair : Top Layer-Int1 (GND)
+
+    Adding Layer      : Drill Guide
+
+
+Used DCodes :
+    D13
+*************************************************************
+
+*************************************************************
+Generating : Drill Guide
+      File : BRR_CB_P03_REV_A1_1-STM32MP157_Drillmap_3.gbr
+
+    Adding Drill Pair : Top Layer-Signal Layer 1
+
+    Adding Layer      : Drill Guide
+
+
+Used DCodes :
+    D13
+*************************************************************
+
+*************************************************************
+Generating : Drill Guide
+      File : BRR_CB_P03_REV_A1_1-STM32MP157_Drillmap_4.gbr
+
+    Adding Drill Pair : Top Layer-Signal Layer 2
+
+    Adding Layer      : Drill Guide
+
+
+Used DCodes :
+    D13
+*************************************************************
+
+*************************************************************
+Generating : Drill Guide
+      File : BRR_CB_P03_REV_A1_1-STM32MP157_Drillmap_5.gbr
+
+    Adding Drill Pair : Int1 (GND)-Int2 (PWR)
+
+    Adding Layer      : Drill Guide
+
+
+Used DCodes :
+    D13
+*************************************************************
+
+*************************************************************
+Generating : Drill Guide
+      File : BRR_CB_P03_REV_A1_1-STM32MP157_Drillmap_6.gbr
+
+    Adding Drill Pair : Signal Layer 1-Bottom Layer
+
+    Adding Layer      : Drill Guide
+
+
+Used DCodes :
+    D13
+*************************************************************
+
+*************************************************************
+Generating : Drill Guide
+      File : BRR_CB_P03_REV_A1_1-STM32MP157_Drillmap_7.gbr
+
+    Adding Drill Pair : Signal Layer 2-Bottom Layer
+
+    Adding Layer      : Drill Guide
+
+
+Used DCodes :
+    D13
+*************************************************************
+
+*************************************************************
+Generating : Drill Guide
+      File : BRR_CB_P03_REV_A1_1-STM32MP157_Drillmap_8.gbr
+
+    Adding Drill Pair : Int2 (PWR)-Bottom Layer
+
+    Adding Layer      : Drill Guide
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Profile
+      File : BRR_CB_P03_REV_A1_1-STM32MP157_Profile.gbr
+
+
+Used DCodes :
+    D131
+*************************************************************
+

@@ -1,0 +1,20 @@
+DRC Rules Export File for PCB: C:\Users\Richard Tomasovic\AppData\Local\Temp\Releases\Snapshot\1\BRR_CB_P03_REV_A1_1-STM32MP157.PcbDoc
+RuleKind=Clearance|RuleName=Clearance_FIDUCIALS|Scope=Board|Minimum=19.69
+RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion_Via|Scope=Board|Minimum=0.00
+RuleKind=Width|RuleName=Width_50R_SDMMC2|Scope=Board|Minimum=1.72
+RuleKind=Clearance|RuleName=Clearance_55R_DDR|Scope=Board|Minimum=4.02
+RuleKind=Width|RuleName=Width_DDR_VREF|Scope=Board|Minimum=6.69
+RuleKind=Width|RuleName=Width_50R_SDMMC1|Scope=Board|Minimum=1.72
+RuleKind=Width|RuleName=Width_55R|Scope=Board|Minimum=1.23
+RuleKind=Width|RuleName=Width_DDR|Scope=Board|Minimum=4.02
+RuleKind=Clearance|RuleName=Clearence_EMMC|Scope=Board|Minimum=4.02
+RuleKind=Clearance|RuleName=Clearance_RAM|Scope=Board|Minimum=4.02
+RuleKind=Clearance|RuleName=Clearence_MPU_BGA|Scope=Board|Minimum=4.02
+RuleKind=ShortCircuit|RuleName=ShortCircuit|Scope=Board|Allowed=0
+RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion|Scope=Board|Minimum=4.00
+RuleKind=Width|RuleName=Width|Scope=Board|Minimum=4.02
+RuleKind=Clearance|RuleName=Clearance|Scope=Board|Minimum=5.94
+RuleKind=Clearance|RuleName=ClearanceDiff|Scope=Board|Minimum=4.02
+RuleKind=Clearance|RuleName=ClearanceInPolygon|Scope=Board|Minimum=10.00
+RuleKind=Clearance|RuleName=Clearance_PolygonDif|Scope=Board|Minimum=19.92
+RuleKind=Clearance|RuleName=Clearance_IntGND|Scope=Board|Minimum=19.92

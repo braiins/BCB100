@@ -1,0 +1,81 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: BRR_CB_P03_REV_A1_1-STM32MP157.PcbDoc   25. 3. 2025  9:34:18
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : BRR_CB_P03_REV_A1_1-STM32MP157.TXT
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      0.2mm (8mil)                                              Round             366       PTH        1159.16mm (45.64inch)
+T2      0.254mm (10mil)                                           Round             2         PTH        51.55mm (2.03inch)
+T3      0.8mm (31mil)                                             Round             72        PTH        197.20mm (7.76inch)
+T4      0.9mm (35mil)                                             Round             18        PTH        119.63mm (4.71inch)
+T5      1mm (39mil)                                               Round             15        PTH        213.47mm (8.40inch)
+T6      1.1mm (43mil)           +0.2mm (8mil)                     Round             16        PTH        49.58mm (1.95inch)
+T7      1.1mm (43mil)                                             Round             4         PTH        17.51mm (0.69inch)
+T8      1.3mm (51mil)                                             Round             4         PTH        45.54mm (1.79inch)
+T9      1.65mm (65mil)                                            Round             2         PTH        15.75mm (0.62inch)
+T10     1.8mm (71mil)                                             Round             6         PTH        22.30mm (0.88inch)
+T11     1mm (39mil)                                               Round             2         NPTH       8.00mm (0.31inch)
+T12     1.3mm (51mil)           +0mm (0mil)                       Round             4         NPTH       34.34mm (1.35inch)
+T13     3mm (118mil)                                              Round             4         NPTH       223.49mm (8.80inch)
+T14     3.1mm (122mil)                                            Round             2         NPTH       8.40mm (0.33inch)
+T15     3.25mm (128mil)                                           Round             2         NPTH       11.43mm (0.45inch)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              519
+Layer Pair : Top Layer to Int1 (GND)
+ASCII RoundHoles File : BRR_CB_P03_REV_A1_1-STM32MP157.TX1
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      0.2mm (8mil)                                              Round             4         PTH        34.26mm (1.35inch)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              4
+Layer Pair : Top Layer to Signal Layer 1
+ASCII RoundHoles File : BRR_CB_P03_REV_A1_1-STM32MP157.TX2
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      0.2mm (8mil)                                              Round             58        PTH        295.32mm (11.63inch)
+T2      0.254mm (10mil)                                           Round             1         PTH        0.00mm (0.00inch)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              59
+Layer Pair : Top Layer to Signal Layer 2
+ASCII RoundHoles File : BRR_CB_P03_REV_A1_1-STM32MP157.TX3
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      0.2mm (8mil)                                              Round             57        PTH        316.73mm (12.47inch)
+T2      0.254mm (10mil)                                           Round             8         PTH        191.61mm (7.54inch)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              65
+Layer Pair : Int1 (GND) to Int2 (PWR)
+ASCII RoundHoles File : BRR_CB_P03_REV_A1_1-STM32MP157.TX4
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      0.2mm (8mil)                                              Round             2         PTH        13.62mm (0.54inch)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              2
+Layer Pair : Signal Layer 1 to Bottom Layer
+ASCII RoundHoles File : BRR_CB_P03_REV_A1_1-STM32MP157.TX5
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      0.2mm (8mil)                                              Round             1         PTH        0.00mm (0.00inch)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              1
+Layer Pair : Signal Layer 2 to Bottom Layer
+ASCII RoundHoles File : BRR_CB_P03_REV_A1_1-STM32MP157.TX6
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      0.2mm (8mil)                                              Round             2         PTH        28.60mm (1.13inch)
+T2      0.254mm (10mil)                                           Round             1         PTH        0.00mm (0.00inch)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              3
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              653
+
+Total Processing Time (hh:mm:ss) : 00:00:00
